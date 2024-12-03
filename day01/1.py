@@ -1,14 +1,17 @@
-with open('day01/input.txt') as file:
-    list1 = []
-    list2 = []
+def inputLists():
+    with open('day01/input.txt') as file:
+        list1 = []
+        list2 = []
 
-    for line in file:
-        line = line.split()
-        list1.append(int(line[0]))
-        list2.append(int(line[1])) 
+        for line in file:
+            line = line.split()
+            list1.append(int(line[0]))
+            list2.append(int(line[1])) 
+        return list1, list2
 
 
-def solution1(list1, list2):
+def solution1():
+    list1, list2 = inputLists()
     list1.sort()
     list2.sort()
     
@@ -19,7 +22,9 @@ def solution1(list1, list2):
     return sum
 
 
-def solution2(list1, list2):
+def solution2():
+    list1, list2 = inputLists()
+
     sum = 0
     for number in list1:
         sum += number * list2.count(number)
@@ -27,5 +32,5 @@ def solution2(list1, list2):
     return sum
 
 
-print(solution1(list1,list2))
-print(solution2(list1,list2))
+print(solution1())
+print(solution2())

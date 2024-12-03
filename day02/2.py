@@ -1,9 +1,11 @@
-with open('day02/input.txt') as file:
-    listOfReports = []
-    for line in file:
-        lst = line.split()
-        b = list(map(int, lst))
-        listOfReports.append(b)
+def inputList():
+    with open('day02/input.txt') as file:
+        listOfReports = []
+        for line in file:
+            lst = line.split()
+            b = list(map(int, lst))
+            listOfReports.append(b)
+        return listOfReports
 
 
 def solution1(reports):
@@ -34,5 +36,5 @@ def adjustReport(report):
     return None  
 
 
-print(solution1(listOfReports))
-print(solution2(listOfReports))
+print(solution1(inputList()))
+print(solution2(inputList()))
